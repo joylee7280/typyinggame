@@ -1,0 +1,33 @@
+# Project: SDL2_Devcpp
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = SDL2_Devcpp_private.res
+OBJ      = "Type\ to\ Space!.o" $(RES)
+LINKOBJ  = "Type to Space!.o" $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"SDL2-2.0.12/x86_64-w64-mingw32/lib" -L"SDL_bgi-2.4.2/bin/Mingw64" -L"SDL2_image-2.0.5/x86_64-w64-mingw32/lib" -L"SDL2_mixer-2.0.4/x86_64-w64-mingw32/lib" -L"SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib" -lmingw32 -L/mingw64/bin -lSDL_bgi -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2main -lSDL2
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"SDL2-2.0.12/x86_64-w64-mingw32/include" -I"SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2" -I"SDL_bgi-2.4.2/src" -I"SDL2_image-2.0.5/x86_64-w64-mingw32/include" -I"SDL2_mixer-2.0.4/x86_64-w64-mingw32/include" -I"SDL2_ttf-2.0.15/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"SDL2-2.0.12/x86_64-w64-mingw32/include" -I"SDL2-2.0.12/x86_64-w64-mingw32/include/SDL2" -I"SDL_bgi-2.4.2/src" -I"SDL2_image-2.0.5/x86_64-w64-mingw32/include" -I"SDL2_mixer-2.0.4/x86_64-w64-mingw32/include" -I"SDL2_ttf-2.0.15/x86_64-w64-mingw32/include"
+BIN      = SDL2_Devcpp.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Type\ to\ Space!.o": Type\ to\ Space!.cpp
+	$(CPP) -c "Type to Space!.cpp" -o "Type to Space!.o" $(CXXFLAGS)
+
+SDL2_Devcpp_private.res: SDL2_Devcpp_private.rc 
+	$(WINDRES) -i SDL2_Devcpp_private.rc --input-format=rc -o SDL2_Devcpp_private.res -O coff 
+
